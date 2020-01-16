@@ -1,0 +1,510 @@
+/* color ideas
+#0292B7
+#6c7b95
+#464159 */
+
+#272343
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: calc(1em + 0.5vw);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Inria Serif', serif;
+}
+
+h2 {   /*section-titles */
+  margin: 1rem auto;
+}
+
+hr {
+  display: inline-block;
+  width: 80%;
+  color: #272343;
+}
+
+/* General Styles */
+.section-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* div always take up full window */
+  height: 100%;
+  min-height: 100vh;
+}
+
+.flex-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 100%;
+}
+
+/* home page styles */
+.home-wrapper {
+  /* background-color: #0292B7; */
+  color: white;
+}
+
+.navbar {
+  background-color: #272343;
+  border-bottom: 0.25rem solid black;
+  width: 100%;
+}
+
+.logo-wrap {
+  display: inline-block;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.logo {
+  height: 2rem;
+}
+
+.links {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin: 0.2rem;
+  padding-top: 0;
+  padding-bottom: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.summary-container {
+  position: relative;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.summary-img {
+  width: 100%;
+}
+
+.summary-title {
+  font-size: 1.2rem;
+}
+
+.summary-text {
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: left;
+  position: absolute;
+  bottom: 5px;
+  padding: 1rem;
+}
+
+.summary-text p {
+  font-size: 0.8rem;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 2px solid;
+  border-radius: 2px;
+  padding: 0.2rem 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.order-btn {
+  color: white;
+  border-color: white;
+}
+
+.video-wrapper {
+  border-top: 4px solid black; /* color */
+  border-bottom: 4px solid black; /* color */
+  background-color: black; /*fills in gaps left by sizing */
+  margin: 2.5rem auto;
+
+  width: 100%;
+}
+
+.aspect-ratio {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* Examples page */
+.carousel-wrapper {
+  margin: 2rem auto 3rem auto;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.image-holder {
+  background-color: inherit;
+}
+
+.l-arrow, .r-arrow {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 40%;
+}
+
+.l-arrow {
+  left: 0;
+}
+
+.r-arrow {
+  right: 0;
+}
+
+.left, .right {
+  border: solid black;
+  border-color: rgba(0, 0, 0, 0.5);
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel-image {
+  width: 100%;
+  display: none;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.transition {
+  opacity: 0;
+}
+
+.active {
+  display: inline-block;
+}
+
+/* About page  */
+.about-wrapper {
+  display: inline-block;
+  margin: 2rem auto;
+}
+
+.about-text-wrapper {
+  display: inline-block;
+  margin: 0 1rem 1rem 1rem;
+  font-size: 0.8rem;
+}
+
+.alan-photo {
+  display: none;
+  border-radius: 2px;
+}
+
+.about-logo {
+  height: 100px;
+  width: 100px;
+  margin-top: 0.5rem;
+}
+
+/* Models page */
+.models-wrapper {
+  margin: 2rem auto;
+  max-width: 760px;
+}
+
+.models-image {
+  width: 100%;
+}
+
+.model-types-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.model-types-wrapper div {
+  margin: 0.5rem 1rem;
+}
+
+/* order page */
+.order-wrapper {
+  text-align: center;
+}
+
+.order-wrapper p {
+  margin: 1.5rem; /*2rem margin between h2 p and flexbox form could refactor to 1rem top/bottom and 1rem for container */
+}
+
+.order-column {
+  width: 100%;
+  text-align: left;
+}
+
+.order-column div {
+  margin: 0.4rem 0;
+}
+
+.order-column div:last-child {
+  margin-bottom: 0;
+}
+
+.order-column label {
+  display: inline-block;
+  width: 30%;
+  margin-left: 10%;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.order-column input {
+  border: 1px solid black;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  height: 1.4rem;
+  box-shadow: 1px 1px 2px black;
+  padding-left: 0.5rem;
+  box-sizing: border-box;
+  text-align: left;
+  width: 50%;
+  margin-right: 10%;
+}
+
+.order-column select {
+  border: 1px solid black;
+  border-radius: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  height: 1.4rem;
+  box-shadow: 1px 1px 2px black;
+  box-sizing: border-box;
+  width: 50%;
+  margin-right: 10%;
+}
+
+.submit-wrapper {
+  text-align: center;
+}
+
+.submit-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: inherit;
+  color: white;
+  border-color: white;
+}
+
+
+/* footer */
+.footer {
+  height: 2rem;
+  background-color: #6c7b95;
+  border-top: 0.25rem solid #8C756A;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  color: white;
+  font-size: 0.65rem;
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.huttWebDesigns {
+  font-family: monospace;
+}
+
+.huttWebDesigns a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* media break points  */
+/* Very small - iphone 5 etc. */
+@media (min-width: 400px) {
+  .links {
+    font-size: 1rem;
+  }
+  .summary-container {
+    width: 80%;
+    margin: 2rem auto;
+    border-radius: 2px;
+  }
+  .order-column {
+    width: 90%;
+  }
+}
+
+@media (min-width: 430px) {
+  /* examples page */
+  .carousel-wrapper {
+    width: 430px;
+    height: 100%;
+  }
+  .carousel-image {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 650px) {
+  /* navbar */
+  .logo-wrap {
+    float: left;
+    margin-top: 0.8rem;
+    margin-left: 0.6rem;
+  }
+  .link-wrap {
+    text-align: right;
+    margin-right: 0.5rem;
+  }
+  .links {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  /* home page */
+  .summary-container {
+    display: flex;
+    width: 95%;
+  }
+  .summary-img {
+    width: 30%;
+    border-radius: 2px;
+  }
+  .summary-text {
+    position: static;
+    background-color: inherit;
+    /* background-color: black; */
+    padding: 0 0 0 1.5rem;
+  }
+  .order-btn:hover {
+    color: black;
+    background-color: white;
+  }
+  .submit-btn:hover {
+    color: black;
+    background-color: white;
+  }
+  .video-wrapper {
+    width: 80%;
+    border: 4px solid black; /* color */
+    border-radius: 4px;;
+  }
+
+  /* Examples page  */
+  .carousel-wrapper {
+    position: static;
+    width: 100%;
+    max-width: 650px;
+  }
+  .l-arrow, .r-arrow {
+    display: none;
+  }
+  .carousel-image {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+  }
+
+  /* order page */
+  .flex-order {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .order-column {
+    width: 50%;
+  }
+
+  /* about page */
+  .about-wrapper {
+    display: inline-flex;
+    padding: 0 1.5rem;
+    width: 95%;
+  }
+  .alan-photo {
+    display: inline-block;
+    height: 100%;
+  }
+  .about-text-wrapper {
+    text-align: left;
+  }
+
+  /* Models Page */
+  .models-wrapper {
+    display: flex;
+  }
+  .models-image {
+    width: 75%;
+    border-radius: 2px;
+  }
+  .model-types-wrapper {
+    flex-direction: column;
+    width: 25%;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Home */
+  .summary-container {
+    width: 80%;
+  }
+  .video-wrapper {
+    width: 60%;
+  }
+
+  /* Examples page */
+  .carousel-wrapper {
+    max-width: 992px;
+  }
+  .carousel-image {
+    width: 320px;
+    height: 320px;
+  }
+
+  /* About */
+  .about-wrapper {
+    display: inline-flex;
+    padding: 0 1.5rem;
+    width: 80%;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
