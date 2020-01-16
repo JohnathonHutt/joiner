@@ -1,12 +1,3 @@
-/* color ideas
-#0292B7
-#6c7b95
-#464159 */
-
-#272343
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -18,8 +9,10 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: white;
+  background-color: rgb(225, 236, 244);
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3 {
@@ -33,7 +26,7 @@ h2 {   /*section-titles */
 hr {
   display: inline-block;
   width: 80%;
-  color: #272343;
+  color: black;
 }
 
 /* General Styles */
@@ -61,13 +54,11 @@ hr {
 
 /* home page styles */
 .home-wrapper {
-  /* background-color: #0292B7; */
   color: white;
 }
 
 .navbar {
-  background-color: #272343;
-  border-bottom: 0.25rem solid black;
+  background-color: rgb(36, 39, 41);
   width: 100%;
 }
 
@@ -128,8 +119,15 @@ hr {
 }
 
 .order-btn {
+  background-color: rgb(202, 128, 3);
+  border-color: rgb(202, 128, 3);
+  color: rgb(225, 236, 244);
+}
+
+.summary-order-btn {
   color: white;
   border-color: white;
+  background-color: inherit;
 }
 
 .video-wrapper {
@@ -247,6 +245,7 @@ hr {
 
 .models-image {
   width: 100%;
+  height: 100%;
 }
 
 .model-types-wrapper {
@@ -290,12 +289,14 @@ hr {
 }
 
 .order-column input {
+  background-color: rgb(230, 241, 250);
+
   border: 1px solid black;
   border-radius: 4px;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8rem;
   height: 1.4rem;
-  box-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 2px rgb(132, 138, 143);
   padding-left: 0.5rem;
   box-sizing: border-box;
   text-align: left;
@@ -304,12 +305,14 @@ hr {
 }
 
 .order-column select {
+  background-color: rgb(230, 241, 250);
+
   border: 1px solid black;
   border-radius: 2px;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8rem;
   height: 1.4rem;
-  box-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 2px rgb(132, 138, 143);
   box-sizing: border-box;
   width: 50%;
   margin-right: 10%;
@@ -322,27 +325,27 @@ hr {
 .submit-btn {
   display: inline-block;
   margin-top: 1rem;
-  background-color: inherit;
-  color: white;
-  border-color: white;
+  background-color: rgb(202, 128, 3);
+  border-color: rgb(202, 128, 3);
+  color: rgb(225, 236, 244);
 }
-
 
 /* footer */
 .footer {
-  height: 2rem;
-  background-color: #6c7b95;
-  border-top: 0.25rem solid #8C756A;
+  height: 4rem;
+  /* background-color: #2f3855;
+  border-top: 0.25rem solid rgb(50, 46, 64); */
+  background-color: rgb(36, 39, 41);
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .footer-text {
   color: white;
   font-size: 0.65rem;
-  margin: 0 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;;
   display: inline-block;
 }
 
@@ -357,7 +360,7 @@ hr {
 
 
 /* media break points  */
-/* Very small - iphone 5 etc. */
+/* small - iphone 5 etc. */
 @media (min-width: 400px) {
   .links {
     font-size: 1rem;
@@ -413,16 +416,24 @@ hr {
   .summary-text {
     position: static;
     background-color: inherit;
-    /* background-color: black; */
+    color: black;
     padding: 0 0 0 1.5rem;
   }
+  .summary-order-btn {
+    background-color: rgb(202, 128, 3);
+    border-color: rgb(202, 128, 3);
+    color: rgb(225, 236, 244);
+  }
+  .links:hover {
+    color: rgb(241, 153, 3);
+  }
   .order-btn:hover {
-    color: black;
-    background-color: white;
+    background-color: rgb(241, 153, 3);
+    border-color: rgb(241, 153, 3);
   }
   .submit-btn:hover {
-    color: black;
-    background-color: white;
+    background-color: rgb(241, 153, 3);
+    border-color: rgb(241, 153, 3);
   }
   .video-wrapper {
     width: 80%;
@@ -471,6 +482,7 @@ hr {
   /* Models Page */
   .models-wrapper {
     display: flex;
+    max-width: 900px;
   }
   .models-image {
     width: 75%;
@@ -507,4 +519,3 @@ hr {
     width: 80%;
   }
 }
-/* Large devices (large desktops, 1200px and up) */
