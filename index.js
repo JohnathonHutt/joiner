@@ -83,4 +83,4 @@ function lazyLoadInit() {
   });
 }
 
-// lazyLoadInit();
+lazyLoadInit();
