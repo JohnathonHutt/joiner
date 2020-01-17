@@ -201,14 +201,11 @@ hr {
 }
 
 .carousel-image {
+  background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
   display: none;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
-}
-
-.carousel-image img {
-  background-color: black;
 }
 
 .transition {
@@ -251,6 +248,8 @@ hr {
 .models-image {
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  min-width: 320px;
 }
 
 .model-types-wrapper {
@@ -389,9 +388,6 @@ hr {
     width: 320px;
     height: 320px;
   }
-  .img-placeholder {
-    width: 320px;
-    height: 320px;
 }
 
 /* Small devices (tablets, 768px and up) */
