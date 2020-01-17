@@ -155,6 +155,7 @@ hr {
 
 /* Examples page */
 .carousel-wrapper {
+  text-align: center;
   margin: 2rem auto 3rem auto;
   padding: 0;
   position: relative;
@@ -204,6 +205,10 @@ hr {
   display: none;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
+}
+
+.carousel-image img {
+  background-color: black;
 }
 
 .transition {
@@ -384,6 +389,9 @@ hr {
     width: 320px;
     height: 320px;
   }
+  .img-placeholder {
+    width: 320px;
+    height: 320px;
 }
 
 /* Small devices (tablets, 768px and up) */
