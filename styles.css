@@ -308,7 +308,6 @@ hr {
   background-color: rgb(230, 241, 250);
 
   border: 1px solid black;
-  border-radius: 2px;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8rem;
   height: 1.4rem;
@@ -406,11 +405,20 @@ hr {
 
   /* home page */
   .summary-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     width: 95%;
   }
+  .summary-img-wrapper {
+    flex-basis: 40%;
+  }
+  .summary-text {
+    flex-basis: 60%;
+  }
   .summary-img {
-    width: 30%;
+    width: 100%;
     border-radius: 2px;
   }
   .summary-text {
@@ -498,6 +506,12 @@ hr {
   /* Home */
   .summary-container {
     width: 80%;
+  }
+  .summary-img-wrapper {
+    flex-basis: 30%;
+  }
+  .summary-text {
+    flex-basis: 70%;
   }
   .video-wrapper {
     width: 60%;
