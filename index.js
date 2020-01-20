@@ -1,5 +1,6 @@
 //carousel
 function carouselInit() {
+  var time = 200;
 
   var lArrow = document.getElementById("l-arrow");
   lArrow.addEventListener("click", function() {
@@ -15,20 +16,23 @@ function carouselInit() {
 
   function moveImage(direction) {
     console.log(direction);
-    document.getElementById(activeId).classList.add("transition");
+    document.getElementById(activeId).classList.remove("show");
+    var num = activeId.split("-");
+    num = Number(num[1]);
+    var next;
+    if (direction === "r") next = (num === 9) ? 1 : num += 1;
+    if (direction === "l") next = (num === 1) ? 9 : num -= 1;
+    next = "i-" + next;
     setTimeout(function() {
-      document.getElementById(activeId).classList.remove("transition");
       document.getElementById(activeId).classList.remove("active");
-      var num = activeId.split("-");
-      num = Number(num[1]);
-      if (direction === "r") num = (num === 9) ? 1 : num += 1;
-      if (direction === "l") num = (num === 1) ? 9 : num -= 1;
-      activeId = "i-" + num;
-      var active = document.getElementById(activeId);
-      active.classList.add("active");
-      active.blur();
-      document.getElementById("image-holder").blur();
-    }, 200);
+      document.getElementById(next).classList.add("active");
+      //need to add delay for transition effect to work - as far as I can tell
+      setTimeout(function() {
+        document.getElementById(next).classList.add("show");
+        //reset activeId for next round
+        activeId = next;
+      }, 200);
+    }, time);
   }
 }
 

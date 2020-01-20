@@ -182,7 +182,8 @@ hr {
 }
 
 .left, .right {
-  border: solid black;
+  border: solid;
+  border-color: black;
   border-color: rgba(0, 0, 0, 0.5);
   border-width: 0 6px 6px 0;
   display: inline-block;
@@ -191,29 +192,34 @@ hr {
 }
 
 .left {
-  transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .right {
-  transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .carousel-image {
-  background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
   display: none;
-  opacity: 1;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.transition {
   opacity: 0;
+  transition: opacity 200ms ease-in-out;
 }
 
 .active {
   display: inline-block;
+}
+
+.show {
+  opacity: 1;
 }
 
 /* About page  */
