@@ -1,3 +1,13 @@
+//jplaceholders are default hidden for noscript case - remove class if js is enabled
+function showPlaceholders() {
+  //remves hide-for-no-script class from images
+  var img = document.querySelectorAll(".hide-for-no-script");
+  for(var i=0; i<img.length; i++) img[i].classList.remove("hide-for-no-script");
+}
+
+showPlaceholders();
+
+
 //carousel
 function carouselInit() {
   var time = 200;
@@ -37,6 +47,7 @@ function carouselInit() {
 }
 
 carouselInit();
+
 
 function lazyLoadInit() {
   document.addEventListener("DOMContentLoaded", function() {
@@ -86,5 +97,6 @@ function lazyLoadInit() {
     }
   });
 }
+
 
 lazyLoadInit();
