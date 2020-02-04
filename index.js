@@ -1,6 +1,6 @@
-//jplaceholders are default hidden for noscript case - remove class if js is enabled
+//placeholders are default hidden for noscript case - remove class if js is enabled
 function showPlaceholders() {
-  //remves hide-for-no-script class from images
+  //removes hide-for-no-script class from images
   var img = document.querySelectorAll(".hide-for-no-script");
   for(var i=0; i<img.length; i++) img[i].classList.remove("hide-for-no-script");
 }
@@ -51,46 +51,43 @@ carouselInit();
 
 function lazyLoadInit() {
   document.addEventListener("DOMContentLoaded", function() {
+    //Select all placeholder images by data-src
     var lazyloadImages = document.querySelectorAll("[data-src]");
-
+    //If browser supports IntersectionObserver
     if ("IntersectionObserver" in window) {
       var imageObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            var image = entry.target;
+        for (var i=0; i<entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            var image = entries[i].target;
             console.log(image.id);
             image.src = image.dataset.src;
             imageObserver.unobserve(image);
           }
-        });
+        }
       });
-
-      lazyloadImages.forEach(function(image) {
-        imageObserver.observe(image);
-      });
+      //Observe all placeholder images
+      for (var j=0; j<lazyloadImages.length; j++) imageObserver.observe(lazyloadImages[j]);
     } else {
+      //Broser does NOT support IntersectionObserver
       var lazyloadThrottleTimeout;
-
-      function lazyload () {
+      function lazyload() {
         if(lazyloadThrottleTimeout) {
           clearTimeout(lazyloadThrottleTimeout);
         }
-
         lazyloadThrottleTimeout = setTimeout(function() {
           var scrollTop = window.pageYOffset;
-          lazyloadImages.forEach(function(img) {
-              if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                img.src = img.dataset.src;
-              }
-          });
-          if(lazyloadImages.length == 0) {
+          for (var k=0; k<lazyloadImages; k++) {
+            if (lazyloadImages[k].offsetTop < (window.innerHeight + scrollTop)) {
+              lazyloadImages[k].src = lazyloadImages[k].dataset.src;
+            }
+          }
+          if (lazyloadImages.length == 0) {
             document.removeEventListener("scroll", lazyload);
             window.removeEventListener("resize", lazyload);
             window.removeEventListener("orientationChange", lazyload);
           }
         }, 20);
       }
-
       document.addEventListener("scroll", lazyload);
       window.addEventListener("resize", lazyload);
       window.addEventListener("orientationChange", lazyload);
